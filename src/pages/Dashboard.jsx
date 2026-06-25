@@ -1,77 +1,99 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import {
+  Link2,
+  Scissors,
+  Package,
+  Image,
+  FileText,
+  Droplets,
+  RotateCw,
+  Trash2,
+  FileOutput,
+  History,
+} from "lucide-react";
 
 const Dashboard = () => {
   const tools = [
     {
       name: "Merge",
       link: "/merge",
-      icon: "🔗",
+      icon: Link2,
       description: "Combine multiple PDFs into one",
       color: "from-blue-500 to-blue-600",
+      iconColor: "text-blue-500",
     },
     {
       name: "Split",
       link: "/split",
-      icon: "✂️",
+      icon: Scissors,
       description: "Split PDFs into separate pages",
       color: "from-purple-500 to-purple-600",
+      iconColor: "text-purple-500",
     },
     {
       name: "Compress",
       link: "/compress",
-      icon: "📦",
+      icon: Package,
       description: "Reduce PDF file size",
       color: "from-green-500 to-green-600",
+      iconColor: "text-green-500",
     },
     {
       name: "PDF → JPG",
       link: "/pdf-to-jpg",
-      icon: "🖼️",
+      icon: Image,
       description: "Convert PDF pages to images",
       color: "from-orange-500 to-orange-600",
+      iconColor: "text-orange-500",
     },
     {
       name: "JPG → PDF",
       link: "/jpg-to-pdf",
-      icon: "📄",
+      icon: FileText,
       description: "Convert images to PDF format",
       color: "from-pink-500 to-pink-600",
+      iconColor: "text-pink-500",
     },
     {
       name: "Watermark",
       link: "/watermark",
-      icon: "💧",
+      icon: Droplets,
       description: "Add watermarks to your PDFs",
       color: "from-cyan-500 to-blue-600",
+      iconColor: "text-cyan-500",
     },
     {
       name: "Rotate",
       link: "/rotate",
-      icon: "🔄",
+      icon: RotateCw,
       description: "Rotate PDF pages as needed",
       color: "from-yellow-500 to-orange-500",
+      iconColor: "text-yellow-500",
     },
     {
       name: "Delete Pages",
       link: "/delete-pages",
-      icon: "🗑️",
+      icon: Trash2,
       description: "Remove unwanted pages from PDFs",
       color: "from-red-500 to-orange-600",
+      iconColor: "text-red-500",
     },
     {
       name: "Extract Pages",
       link: "/extract-pages",
-      icon: "📤",
+      icon: FileOutput,
       description: "Extract specific pages from PDFs",
       color: "from-indigo-500 to-purple-600",
+      iconColor: "text-indigo-500",
     },
     {
       name: "History",
       link: "/history",
-      icon: "⏱️",
+      icon: History,
       description: "View your recent conversions",
       color: "from-indigo-500 to-indigo-600",
+      iconColor: "text-indigo-500",
     },
   ];
 
@@ -103,7 +125,7 @@ const Dashboard = () => {
                     <div
                       className={`text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300`}
                     >
-                      {tool.icon}
+                      <tool.icon className={`w-10 h-10 ${tool.iconColor}`} />
                     </div>
 
                     {/* Title */}

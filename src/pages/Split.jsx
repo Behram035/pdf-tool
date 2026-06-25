@@ -3,6 +3,7 @@ import API from "../api/axios";
 import DropUploader from "../components/DropUploader";
 import FilePreviewPanel from "../components/FilePreviewPanel";
 import Navbar from "../components/Navbar";
+import { Scissors } from "lucide-react";
 
 const Split = () => {
   const [files, setFiles] = useState([]);
@@ -49,12 +50,14 @@ const Split = () => {
       <Navbar />
       <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-950">
         {/* Header */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="text-center mb-4">
-            <div className="inline-block mb-4">
-              <div className="text-6xl mb-4">✂️</div>
+        <div className="max-w-7xl mx-auto px-6 py-10">
+          <div className="text-center mb-2">
+            <div className="inline-block mb-2">
+              <div className="text-6xl text-purple-500 animate-bounce">
+                <Scissors className="w-16 h-16" />
+              </div>
             </div>
-            <h1 className="text-5xl font-bold text-white mb-3">Split PDF</h1>
+            <h1 className="text-4xl font-bold text-white mb-3">Split PDF</h1>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Divide your PDF into individual pages or custom ranges instantly
             </p>

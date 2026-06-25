@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { FileBox, LogOut, LogIn, UserRoundPlus } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,13 +72,13 @@ const Navbar = () => {
             className="flex items-center gap-3 group hover:opacity-85 transition-opacity duration-200"
           >
             <div className="p-1.5 bg-linear-to-br from-blue-600 via-indigo-600 to-cyan-600 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow">
-              <span className="text-xl font-bold text-white">📑</span>
+              <FileBox className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-lg font-bold bg-linear-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent">
                 PDF Tools
               </h1>
-              <p className="text-xs text-gray-500 font-small">
+              <p className="text-xs text-gray-300 font-small">
                 Professional Toolkit
               </p>
             </div>
@@ -108,23 +109,23 @@ const Navbar = () => {
             {token ? (
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 bg-linear-to-r from-red-600 to-red-700 text-white font-medium text-sm rounded-lg hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105 cursor-pointer"
+                className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-red-600 to-red-700 text-white font-medium text-sm rounded-lg hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105 cursor-pointer"
               >
-                Logout
+                <LogOut className="w-4 h-4" /> Logout
               </button>
             ) : (
               <>
                 <Link
                   to="/login"
-                  className="px-4 py-2 bg-white/10 text-white font-medium text-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 transform cursor-pointer"
+                  className="flex items-center gap-2 px-4 py-2 bg-white/10 text-white font-medium text-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 transform cursor-pointer"
                 >
-                  Login
+                  <LogIn className="w-4 h-4" /> Login
                 </Link>
                 <Link
                   to="/register"
-                  className="px-4 py-2 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-medium text-sm rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 cursor-pointer"
+                  className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-medium text-sm rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 cursor-pointer"
                 >
-                  Sign Up
+                  <UserRoundPlus className="w-4 h-4" /> Sign Up
                 </Link>
               </>
             )}

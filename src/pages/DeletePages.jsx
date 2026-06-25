@@ -2,6 +2,7 @@ import { useState } from "react";
 import API from "../api/axios";
 import SingleFileUploader from "../components/SingleFileUploader";
 import Navbar from "../components/Navbar";
+import { Trash2 } from "lucide-react";
 
 const DeletePages = () => {
   const [fileId, setFileId] = useState(null);
@@ -40,21 +41,24 @@ const DeletePages = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-linear-to-br from-slate-950 via-blue-950 to-slate-950 p-6 md:p-12">
-        <div className="max-w-2xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-block p-3 bg-red-500/20 rounded-full mb-4">
-              <span className="text-4xl">🗑️</span>
+      <div className="min-h-screen bg-linear-to-br from-slate-950 via-red-950 to-slate-950">
+        {/* Header */}
+        <div className="max-w-7xl mx-auto px-6 py-10">
+          <div className="text-center mb-2">
+            <div className="inline-block mb-2">
+              <div className="text-6xl text-red-500 animate-bounce">
+                <Trash2 className="w-16 h-16" />
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-              Delete Pages
-            </h1>
-            <p className="text-gray-400 text-lg">
+            <h1 className="text-4xl font-bold text-white mb-3">Delete Pages</h1>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Remove unwanted pages from your PDF document
             </p>
           </div>
+        </div>
 
+        {/* Content */}
+        <div className="max-w-4xl mx-auto px-6 pb-16">
           {/* Main Card */}
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-10 space-y-8">
             {/* Upload Section */}
