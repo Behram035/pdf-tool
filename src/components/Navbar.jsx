@@ -134,20 +134,20 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-gray-100 transition-colors"
+            className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-cyan-700 hover:bg-gray-200 transition-colors"
           >
             <span
-              className={`w-5 h-0.5 bg-linear-to-r from-gray-800 to-gray-900 rounded-full transition-all duration-300 ${
+              className={`w-5 h-0.5 bg-linear-to-r from-white to-gray-200 rounded-full transition-all duration-300 ${
                 isOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`w-5 h-0.5 bg-linear-to-r from-gray-800 to-gray-900 rounded-full transition-all duration-300 ${
+              className={`w-5 h-0.5 bg-linear-to-r from-white to-gray-200 rounded-full transition-all duration-300 ${
                 isOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`w-5 h-0.5 bg-linear-to-r from-gray-800 to-gray-900 rounded-full transition-all duration-300 ${
+              className={`w-5 h-0.5 bg-linear-to-r from-white to-gray-200 rounded-full transition-all duration-300 ${
                 isOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />
@@ -164,9 +164,8 @@ const Navbar = () => {
                     key={tool.path}
                     to={tool.path}
                     onClick={() => setIsOpen(false)}
-                    className="items-center gap-2 px-4 py-2 rounded-lg text-gray-700 hover:bg-linear-to-r hover:from-gray-50 hover:to-gray-100 transition-all duration-300 font-medium block w-full group"
+                    className="items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:bg-linear-to-r hover:from-gray-50 hover:to-gray-100 transition-all duration-300 font-medium block w-full group"
                   >
-                    <span className="text-lg">{tool.icon}</span>
                     <span className="group-hover:text-transparent group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all">
                       {tool.name}
                     </span>
@@ -177,7 +176,7 @@ const Navbar = () => {
                     onClick={handleLogout}
                     className="w-full px-4 py-3 bg-linear-to-r from-red-600 to-red-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg cursor-pointer"
                   >
-                    Logout
+                    <LogOut className="w-4 h-4" /> Logout
                   </button>
                 </div>
               </>
@@ -186,16 +185,16 @@ const Navbar = () => {
                 <Link
                   to="/login"
                   onClick={() => setIsOpen(false)}
-                  className="items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-all duration-300 font-medium block w-full cursor-pointer"
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-100 transition-all duration-300 font-medium w-full cursor-pointer"
                 >
-                  Login
+                  <LogIn className="w-4 h-4" /> Login
                 </Link>
                 <Link
                   to="/register"
                   onClick={() => setIsOpen(false)}
-                  className="items-center gap-3 px-4 py-3 rounded-lg bg-linear-to-r from-blue-600 to-indigo-600 text-white font-medium transition-all duration-300 hover:shadow-lg block w-full cursor-pointer"
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg bg-linear-to-r from-blue-600 to-indigo-600 text-white font-medium transition-all duration-300 hover:shadow-lg w-full cursor-pointer"
                 >
-                  Sign Up
+                  <UserRoundPlus className="w-4 h-4" /> Sign Up
                 </Link>
               </div>
             )}
